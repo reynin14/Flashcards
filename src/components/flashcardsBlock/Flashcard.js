@@ -27,9 +27,11 @@ class Flashcard extends React.Component{
 
     return(
       <div className={'card' + (this.state.flipped ? 'flipped' : '')} onClick={this.handleClick}>
+
         <div className='content'>
           {this.state.flipped ? back : front}
         </div>
+
       </div>
     )
   }
