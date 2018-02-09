@@ -2,7 +2,6 @@ import React from 'react'
 import '../../App.css'
 
 class Flashcard extends React.Component{
-
   state = {
     flipped: false
   }
@@ -15,26 +14,17 @@ class Flashcard extends React.Component{
 
   render(){
 
-    let front =
-      <div className='front'>
-        Front
-      </div>
+    let side = this.state.flipped ? 'Back' : 'Front'
 
-    let back =
-      <div className='back'>
-        Back
-      </div>
-
-    return(
-      <div className={'card' + (this.state.flipped ? 'flipped' : '')} onClick={this.handleClick}>
-
-        <div className='content'>
-          {this.state.flipped ? back : front}
+    return (
+      <div className={'card' + (this.state.flipped ? 'flipped' : '')}>
+        <div className='content' onClick={this.handleClick}>
+          <div className={side}>
+            {side}
+          </div>
         </div>
-
       </div>
     )
   }
 }
-
 export default Flashcard
