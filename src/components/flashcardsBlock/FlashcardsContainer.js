@@ -26,14 +26,13 @@ class FlashcardsContainer extends React.Component {
   render(){
 
     let flashcards = this.state.questions.map((question) => {
+
       let correctAnswerChoice = 'option' + `${question.answers}`
-      {debugger}
 
-      //need to fix interpolation and rid of quotation marks
-
-      return(
-        <Flashcard question={question.question} answer={question.correctAnswerChoice}/>
+      return (
+        <Flashcard key={question.id} question={question.question} answer={eval('question.' + correctAnswerChoice)} />
       )
+
     })
 
     return(
@@ -42,9 +41,7 @@ class FlashcardsContainer extends React.Component {
           <strong>Flashcards Block</strong>
         </div>
         <div className='flashcards-display'>
-          <Flashcard />
-          <Flashcard />
-          <Flashcard />
+          {flashcards}
         </div>
       </div>
     )

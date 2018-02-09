@@ -16,11 +16,15 @@ class Flashcard extends React.Component{
 
     let side = this.state.flipped ? 'Back' : 'Front'
 
+    let show = this.state.flipped ? this.props.answer : this.props.question
+
     return (
       <div className={'card' + (this.state.flipped ? 'flipped' : '')}>
         <div className='content' onClick={this.handleClick}>
           <div className={side}>
-            {side}
+            <div className='content-style'>
+              {show}
+            </div>
           </div>
         </div>
       </div>
