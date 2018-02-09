@@ -27,10 +27,10 @@ class FlashcardsContainer extends React.Component {
 
     let flashcards = this.state.questions.map((question) => {
 
-      let correctAnswerChoice = 'option' + `${question.answers}`
+      let correctAnswerChoice = `question.option${question.answers}`
 
       return (
-        <Flashcard key={question.id} question={question.question} answer={eval('question.' + correctAnswerChoice)} />
+        <Flashcard key={question.id} question={question.question} answer={eval(correctAnswerChoice)} />
       )
 
     })
