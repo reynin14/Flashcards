@@ -18,11 +18,13 @@ class Flashcard extends React.Component{
 
     let show = this.state.flipped ? this.props.answer : this.props.question
 
+    let style = this.props.answer.props ? 'content-style-img' : 'content-style'
+
     return (
       <div className={'card' + (this.state.flipped ? 'flipped' : '')}>
         <div className='content' onClick={this.handleClick}>
           <div className={side}>
-            <div className='content-style'>
+            <div className={style}>
               {show}
             </div>
           </div>
